@@ -1,75 +1,138 @@
 
 public class ColdStorage {
-	
-protected String  Manufacturer;
-private int TotalVolume;
-private static int Weight = 0;
-protected int PowerConsumption;
 
- public ColdStorage(String Manufacturer, int TotalVolume, int Weight, int PowerConsumption){
-	 this.Manufacturer = Manufacturer;
-	 this.TotalVolume =  TotalVolume;
-	 this.Weight =  Weight;
-	 this.PowerConsumption = PowerConsumption;
- }
+	private String manufacturer;
+	private int totalvolume;
+	private int weight;
+	private int powerconsumption;
 
-	public void getManufacturer() {
-		
+	private String color;
+	private int freezingpower;
+	private static int height = 3;
+	protected int noiselevel;
+	protected int guarantee;
+
+	public ColdStorage() {
+
 	}
-	
-    public void setManufacturer(String  Manufacturer) {
-		this.Manufacturer = Manufacturer;
-    }
-    
-//    
-    public int getTotalVolume() {
-    	return this.TotalVolume;
-		
+
+	public ColdStorage(String manufacturer, int totalvolume, int weight, int powerconsumption) {
+		this.manufacturer = manufacturer;
+		this.totalvolume = totalvolume;
+		this.weight = weight;
+		this.powerconsumption = powerconsumption;
 	}
-	
-    public void setTotalVolume(int TotalVolume) {
-		this.TotalVolume =  TotalVolume;
+
+	public ColdStorage(String manufacturer, int totalvolume, int weight, int powerconsumption, String color,
+			int freezingpower, int noiselevel, int guarantee) {
+		this(manufacturer, totalvolume, weight, powerconsumption);
+		this.color = color;
+		this.freezingpower = freezingpower;
+		this.noiselevel = noiselevel;
+		this.guarantee = guarantee;
 	}
-    
- //   
-    public int getWeight() {
-     return Weight;
+
+	public String getManufacturer() {
+		return manufacturer;
 	}
-	
-    public void setWeight(int Weight) {
-		this.Weight =  Weight;
+
+	public void setManufacturer(String manufacturer) {
+		this.manufacturer = manufacturer;
 	}
- //   
-    public int getPowerConsumption() {
-    	return this.PowerConsumption;
+
+	public int getTotalVolume() {
+		return totalvolume;
 	}
-	
-    public void setPowerConsumption(int PowerConsumption) {
-		this.PowerConsumption = PowerConsumption;
-		
+
+	public void setTotalVolume(int totalvolume) {
+		this.totalvolume = totalvolume;
 	}
-//
-    static public void printStaticWeight() {
-    	System.out.println(Weight);
-    }
-    
-    public void printWeight() {
-    	System.out.println(Weight);
-    }
-    
-    public void resetValues(String Manufacturer, int TotalVolume, int Weight, int PowerConsumption){
-   	 this.Manufacturer = Manufacturer;
-   	 this.TotalVolume =  TotalVolume;
-   	 this.Weight =  Weight;
-   	 this.PowerConsumption = PowerConsumption;
-    }
-    
-    public String toString() {
-    	System.out.println(this.Manufacturer);
-    	System.out.println(this.TotalVolume);
-    	System.out.println(this.Weight);
-    	System.out.println(this.PowerConsumption);
-		return Manufacturer;
-    }
-    
+
+	public int getWeight() {
+		return weight;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+
+	public int getPowerConsumption() {
+		return powerconsumption;
+	}
+
+	public void setPowerConsumption(int powerconsumption) {
+		this.powerconsumption = powerconsumption;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public int getFreezingpower() {
+		return freezingpower;
+	}
+
+	public void setFreezingpower(int freezingpower) {
+		this.freezingpower = freezingpower;
+	}
+
+	public static int getHeight() {
+		return height;
+	}
+
+	public static void setHeight(int height) {
+		ColdStorage.height = height;
+	}
+
+	public int getNoiselevel() {
+		return noiselevel;
+	}
+
+	public void setNoiselevel(int noiselevel) {
+		this.noiselevel = noiselevel;
+	}
+
+	public int getGuarantee() {
+		return guarantee;
+	}
+
+	public void setGuarantee(int guarantee) {
+		this.guarantee = guarantee;
+	}
+
+	static public void printStaticHeight() {
+		System.out.println(height);
+	}
+
+	public void printHeight() {
+		System.out.println(height);
+	}
+
+	public void resetValues(String manufacturer, int totalvolume, int weight, int powerconsumption, String color,
+			int freezingpower, int noiselevel, int guarantee) {
+		this.manufacturer = manufacturer;
+		this.totalvolume = totalvolume;
+		this.weight = weight;
+		this.powerconsumption = powerconsumption;
+		this.color = color;
+		this.freezingpower = freezingpower;
+		this.noiselevel = noiselevel;
+		this.guarantee = guarantee;
+	}
+
+	@Override
+	public String toString() {
+		return "manufacturer = " + manufacturer + ", totalvolume = " + totalvolume + ", weight = " + weight
+				+ ", powerconsumption = " + powerconsumption + ", color = " + color + ", freezingpower = "
+				+ freezingpower + ", noiselevel = " + noiselevel + ", guarantee = " + guarantee;
+	}
+
+	public void PrintInfo() {
+		System.out.println(this.toString());
+	}
+
 }
